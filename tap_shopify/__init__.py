@@ -26,8 +26,8 @@ def initialize_shopify_client():
     api_key = Context.config['api_key']
     shop = Context.config['shop']
     version = '2022-07'
-    session = shopify.Session(shop, version, api_key)
-    shopify.ShopifyResource.activate_session(session)
+    shop_url = "https://%s@%s.myshopify.com/admin/api/%s" % (api_key, shop, version)
+    shopify.ShopifyResource.set_site(shop_url)
 
     # set request timeout
     shopify.Shop.set_timeout(get_request_timeout())
