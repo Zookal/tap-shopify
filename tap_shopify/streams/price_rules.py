@@ -8,4 +8,4 @@ class PriceRules(Stream):
     name = 'price_rules'
     replication_object = shopify.PriceRule
 
-Context.stream_objects['discount_codes'] = PriceRules
+Context.stream_objects['price_rules'] = PriceRules
